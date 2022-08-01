@@ -3,80 +3,74 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
 .container{
     height: 100vh;
-    width: 100vw;
     display: grid;
     grid-template:
-    "header header header header" 50px
+    "header header header header" 60px
     "left-bar main right-bar side-bar" 1fr /
     200px minmax(200px, 1fr) 300px 50px ;
 }
+
+      /* HEADER */
 .header{
     grid-area: header;
-    /* width: 100vw; */
-    display: inline;
-    /* grid-template:
-    "title search-bar profile" 1fr /
-    1fr 2fr 1fr  ; */
-    
-    background-color: #ffffff;
-    line-height: 50px;
+    display: grid;
+    grid-template-columns: 200px 2fr 1fr;
+    background-color: white;
 }
 .title{
     margin-left: 40px;
     line-height: 50px;
     font-size: 20px;
+    
 }
 .search-bar{
-    margin-left: 40px;
     font-size: 20px;
     background-color: #f1f3f4;
-    padding-right: 500px;
+    padding-right: 1fr;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 5px;
-    margin-left: 300px;
     border-radius: 8px;
+    align-self: center;
 }
 
 .profile{
-    grid-area: profile;
     justify-self: end;
-    border: solid 1px #eaeeef;
-    padding: 6px;
-    padding-left: 50px;
-    margin-left: 400px;
+    align-self: center;
+    padding: 9px;
+    padding-left: 44px;
+    margin-right: 30px;
+    border: solid 1px #f1f3f4;
+    border-radius: 8px;
+    
 }
 
-
-
-
-
+        /* LEFT BAR */
 
 .left-bar{
     border: solid 1px #eaeeef;
     grid-area: left-bar;
     display: grid;
+    grid-template-rows: 80px 300px 130px 200px 15px;
 }
 .compose{
-    /* display: grid; */
-    /* grid-row: 30px; */
-    text-align: center;
-    border: 1px solid #eaeeef;
-    max-height: 60px;
-    max-width: 50;
-    border-radius: 30px;
-    margin-top: 20px;
-    background-color: white;
-    box-shadow: 2px 2px #e7e1e1;
-    line-height: 55px;
+    border: 1px solid #f1f3f4;
+    padding: 15px;
+    padding-left: 40px;
+    max-width: 140px;
+    margin: 5px;
+    border-radius: 20px;
+    align-self: center;
+    justify-self: start;
+    box-shadow: #83888b 20px;
+    text-align: end;
 }
 .left-bar ul{
     list-style: none;
     display: grid;
+    overflow-y: scroll;
     margin-left: 20px;
     margin-top: 10px;
     align-self: start;
@@ -105,7 +99,7 @@
     padding-top: 20px;
 }
 
-
+           /* MAIN  */
 
 .main{
     grid-area: main;
@@ -117,8 +111,9 @@
     padding: 2px;
     border-top: solid 1px #eaeeef;
 }
+
+           /* RIGHT BAR  */
 .right-bar{
-    display: grid;
     grid-area: right-bar;
     overflow-y: scroll;
 }
@@ -135,11 +130,8 @@
     max-width: 280px;
     margin-left: 10px;
     padding: 5px;
-
 }
 .density{
-    display: grid;
-    margin-top: 15px;
     border: solid 1px #eaeeef;
     padding: 10px;
     font-size: 10PX;
@@ -151,12 +143,35 @@
     line-height: 40px;
 }
 .theme{
-    display: grid;
-    padding: 80px;
+    text-align: start;
     border: solid 1px #eaeeef;
+    height: 150px;
+    align-content: end;
+}
+span{
+    margin-left: 10px;
+}
+.pics {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 45px);
+    gap: 5px;
+    margin: 5px;
+    align-content: end;
+}
+.pics div{
+    border: solid black 1px;
+    align-content: end;
+}
+
+.view-all {
+    color: blue;
+    justify-self: end;
+    margin-left: 160px;
+    
 }
 .type{
-    height: 1fr;
     border: solid 1px #eaeeef;
     padding: 10px;
 }
@@ -166,6 +181,8 @@
     margin-left: 20px;
     line-height: 40px;
 }
+
+      /* SIDE BAR  */
 .side-bar{
     grid-area: side-bar;    
 }
